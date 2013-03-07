@@ -6,9 +6,11 @@ v_cart = x(3);
 
 if s==0 && x_pole<=-pi/50 % pole cannot lean so backwards, if reach the boundry stop negative u and call next step
     s = 1;
-elseif s==1 && x_cart>=4 % when cart reach 4 meter 
+% elseif s==0 && x_cart>=2 % when cart reach 4 meter 
+%     s = 0.5;
+elseif s==1 && x_cart>=4.54 % when cart reach 4 meter 
     s = 2;
-elseif s==2 && x_cart>=6 % when cart reach 6 meter 
+elseif s==2 && x_cart>=6.02 % when cart reach 6 meter 
     s = 3;
 elseif s==3 && x_cart>=10 % when cart reach 10 meter (finishing line)
     s = 4;
@@ -20,22 +22,26 @@ end
 
 if s == 0 % start here
     v_cart_des = -5;% negative u to make car backward 
-    x_pole_des = -pi/15; % negative u  to make car backward 
+    x_pole_des = -pi/14; % negative u  to make car backward 
+% elseif s == 0.5 % start here
+%     v_cart_des = 5;% negative u to make car backward 
+%     x_pole_des = -pi/15; % negative u  to make car backward 
+
 elseif s == 1 
     v_cart_des = 5; % desire forwards to get positive u to run the cart
-    x_pole_des = -pi/15; % pole forwards to get positive u
+    x_pole_des = -pi/13; % pole forwards to get positive u
 elseif s == 2 
-    v_cart_des = 10; % desire forwards to get positive u 
+    v_cart_des = 18; % desire forwards to get positive u 
     x_pole_des = 0; % get the pole back the center
 elseif s == 3
-    v_cart_des = 5;% desire backwards to get negative u to stop the cart
-    x_pole_des = pi/20;% pole backwards to get negative u
+    v_cart_des = 4.8;% desire backwards to get negative u to stop the cart
+    x_pole_des = pi/15;% pole backwards to get negative u
 elseif s == 4 
     v_cart_des = 0; % get negative u
-    x_pole_des = pi/15; % get
+    x_pole_des = pi/15; % pole backwards to get negative u
 elseif s == 5
     v_cart_des = 0;
-    x_pole_des = -pi/110; % stop the cart from run backwards
+    x_pole_des = -pi/180; % stop the cart from run backwards
 elseif s == 6
     v_cart_des = 0;
     x_pole_des = 0;

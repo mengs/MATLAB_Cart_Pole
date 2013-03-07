@@ -26,10 +26,10 @@ t = ti:T:tf;
 x0 = [ 0; 0; 0; 0 ]; % start from rest
 
 % PD control gains --> CHANGE THESE GAINS FOR YOUR CONTROLLER
-Kp_c = 49; % P gain for cart
+Kp_c = 57.455; % P gain for cart
 Kd_c = 1; % D gain for cart
-Kp_p = 1e4; % P gain for pole
-Kd_p = 10; % D gain for pole
+Kp_p = 1e4*1.0375; % P gain for pole
+Kd_p = 10.1; % D gain for pole
 
 
 % Assign initial condition for the state
